@@ -141,10 +141,66 @@ function es2() {
    console.log(newTeams);
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - -
+
+// * EX #3
+
+function betweenValue(array, a, b,) {
+   
+   const newArray = array.filter((item, index) => {
+
+      if (index > a && index < b) {
+         
+         return item;
+      }
+   });
+   return newArray;
+
+   // VER #2 filter no arrow-function
+   // const newArray = array.filter(function (item, index) {
+      
+   //    if (index > a && index < b) {
+         
+   //       return item;
+   //    }
+   // });
+   // console.log(newArray);
+
+   // VER #1 FOREACH
+   // const newArray = [];
+
+   // array.forEach((item, index) => {
+
+   //    if (index > a && index < b) {
+         
+   //       newArray.push(item);
+   //    }
+   // });
+
+   // console.log(newArray);
+}
+
+function es3() {
+   
+   // Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b). 
+   // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+   // Usiamo i nuovi metodi degli array foreach o filter.
+
+   let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+   let a   = 2;
+   let b   = 7;
+
+   const newArray = betweenValue(arr, a, b);
+
+   console.log(newArray);
+}
+
+
 function init() {
    
    // es1()
-   es2();
+   // es2();
+   es3();
 }
 
 $(document).ready(init);
