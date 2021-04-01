@@ -7,16 +7,28 @@ function minor(array) {
       'weight': Number.MAX_SAFE_INTEGER
    }
 
-   for (let i = 0; i < array.length; i++) {
-      const Elem = array[i];
+   // VER ES 5
+   // for (let i = 0; i < array.length; i++) {
+   //    const Elem = array[i];
 
-      const { weight } = Elem;
+   //    const { weight } = Elem;
+
+   //    if (weight < lightBike.weight) {
+         
+   //       lightBike = Elem;
+   //    }
+   // }
+
+   // VER ES 6
+   array.forEach(item => {
+
+      const { weight } = item;
 
       if (weight < lightBike.weight) {
          
-         lightBike = Elem;
+         lightBike = item;
       }
-   }
+   });
    
    return lightBike;
 }
@@ -66,27 +78,48 @@ function getRnd(min, max) {
 
 function rndParam(arrayObj) {
    
-   for (let i = 0; i < arrayObj.length; i++) {
-      const Obj = arrayObj[i];
+//    VER ES 5
+//    for (let i = 0; i < arrayObj.length; i++) {
+//       const Obj = arrayObj[i];
       
-      Obj.points = getRnd(1,60);
-      Obj.gotFouls = getRnd(1,20);
-   }
+//       Obj.points = getRnd(1,60);
+//       Obj.gotFouls = getRnd(1,20);
+//    }
+//    return arrayObj;
+
+//    VER ES 6
+   arrayObj.forEach(item => {
+
+      item.points   = getRnd(1,60);
+      item.gotFouls = getRnd(1, 20);
+   });
+
    return arrayObj;
 }
 
 function noPoints(arrayObj, newArrayObj) {
    
-   for(let i = 0; i < arrayObj.length; i++){
+   // VER ES5 / ES6
+   // for(let i = 0; i < arrayObj.length; i++){
       
-      let Obj = arrayObj[i];
+   //    let Obj = arrayObj[i];
    
-      const { name, gotFouls } = Obj;
+   //    const { name, gotFouls } = Obj;
    
-      Obj = { name, gotFouls };
+   //    Obj = { name, gotFouls };
    
-      newArrayObj.push(Obj);
-   }
+   //    newArrayObj.push(Obj);
+   // }
+
+   // VER ES6
+   arrayObj.forEach(item => {
+
+      const { name, gotFouls } = item;
+
+      item = { name, gotFouls };
+
+      newArrayObj.push(item);
+   });
 
    return newArrayObj;
 }
@@ -203,4 +236,4 @@ function init() {
    es3();
 }
 
-$(document).ready(init);
+$(init);
