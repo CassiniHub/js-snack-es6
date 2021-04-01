@@ -7,7 +7,7 @@ function minor(array) {
       'weight': Number.MAX_SAFE_INTEGER
    }
 
-   // VER ES 5
+   // VER no forEach
    // for (let i = 0; i < array.length; i++) {
    //    const Elem = array[i];
 
@@ -19,7 +19,7 @@ function minor(array) {
    //    }
    // }
 
-   // VER ES 6
+   // VER forEach
    array.forEach(item => {
 
       const { weight } = item;
@@ -78,7 +78,7 @@ function getRnd(min, max) {
 
 function rndParam(arrayObj) {
    
-//    VER ES 5
+//    VER no forEach
 //    for (let i = 0; i < arrayObj.length; i++) {
 //       const Obj = arrayObj[i];
       
@@ -87,7 +87,7 @@ function rndParam(arrayObj) {
 //    }
 //    return arrayObj;
 
-//    VER ES 6
+//    VER forEach
    arrayObj.forEach(item => {
 
       item.points   = getRnd(1,60);
@@ -111,7 +111,7 @@ function noPoints(arrayObj, newArrayObj) {
    //    newArrayObj.push(Obj);
    // }
 
-   // VER ES6
+   // VER forEach
    arrayObj.forEach(item => {
 
       const { name, gotFouls } = item;
